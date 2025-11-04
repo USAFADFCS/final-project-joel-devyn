@@ -103,8 +103,8 @@ OPENAI_API_KEY=sk-proj-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # Google CSE keys and settings
-GOOGLE_CSE_SEARCH_API=AI-xxxxxxxxx
-GOOGLE_CSE_SEARCH_ENGINE_ID=90-xxxxxxxxxxx
+GOOGLE_CSE_SEARCH_API=AI-AIzaSyCRSoJySV5BkyHUqe_xaaPpdQIjXjmDhYU
+GOOGLE_CSE_SEARCH_ENGINE_ID=90-57f5b0ebb7ab9482f
 ```
 
 3. **Test Your Setup**

@@ -40,14 +40,14 @@ Create a `.env` file in your project root:
 cp .env.example .env
 
 # Or create a new one
-echo "OPENAI_API_KEY=your_openai_api_key_here" > .env
+echo "OPENAI_API_KEY=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" > .env
 echo "ANTHROPIC_API_KEY=your_anthropic_api_key_here" >> .env
 ```
 
 Or export them as environment variables:
 
 ```bash
-export OPENAI_API_KEY="your_openai_api_key_here"
+export OPENAI_API_KEY="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"
 export ANTHROPIC_API_KEY="your_anthropic_api_key_here"
 ```
 
@@ -56,7 +56,7 @@ export ANTHROPIC_API_KEY="your_anthropic_api_key_here"
 Run the verification script:
 
 ```bash
-python verify_setup.py
+python3 verify_setup.py
 ```
 
 You should see a colorful output showing all components are properly installed!
@@ -121,7 +121,7 @@ pip install -r requirements.txt --force-reinstall
 ### API Key Issues
 The demos will create sample files if they don't exist, but ensure your API keys are set:
 ```python
-python -c "import os; print('OpenAI Key:', 'Set' if os.getenv('OPENAI_API_KEY') else 'Not Set')"
+python3 -c "import os; print('OpenAI Key:', 'Set' if os.getenv('OPENAI_API_KEY') else 'Not Set')"
 ```
 
 ### Virtual Environment Issues
