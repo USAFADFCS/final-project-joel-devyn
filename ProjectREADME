@@ -1,0 +1,79 @@
+USAFA Policy Assistant
+-----------------------
+
+The USAFA Policy Assistant is a Retrieval-Augmented Generation (RAG) tool that helps users quickly access, search, and analyze USAFA cadet standards, duties, 
+and dress & appearance policies. It provides grounded, citation-supported answers and offers multiple document-analysis capabilities through both a 
+command-line interface and a Streamlit web app.
+
+Features
+--------
+- Policy Q&A with citations
+- Policy Locator for relevant documents/sections
+- Document Summaries
+- Compliance Review & Rewrite
+- Risk Assessment
+- Style Check & Key Findings Extraction
+- Regulation/Memo Reformatting
+- Role-aware answers (C4C, SQ/CC, First Sergeant, etc.)
+
+Requirements
+-----------
+- Python 3.10+
+- OPENAI_API_KEY (required)
+- Recommended packages:
+  chromadb, sentence-transformers, pypdf, pdf2image, pytesseract, fairlib, streamlit
+
+Setup
+-----
+1. Install dependencies:
+   pip install -r requirements.txt
+
+2. Set your API key:
+   export OPENAI_API_KEY="your-key-here"
+
+Build the Policy Index (Required)
+---------------------------------
+Before using the app, build the ChromaDB index:
+
+python3 final_project.py --build-index-only
+
+Run the Streamlit App
+---------------------
+streamlit run streamlit_app.py
+
+Tabs include:
+- Ask the Agent – Ask policy questions
+- Analyze a Document – Upload .txt or .md for review
+
+Command-Line Agent (Optional)
+-----------------------------
+python3 final_project.py
+
+Supported commands:
+/role <role>            Set user role
+/locate <query>         Show document sources
+/summarize <file>       Summarize document
+/rewrite <file>         Rewrite for compliance
+/risk <file>            Generate ORM-style risk assessment
+/deviations <file>      Detect policy conflicts
+/stylecheck <file>      Style/consistency review
+/keyfindings <file>     Extract actions/hazards
+/regformat <file>       AF-style memo formatting
+/show-context           Show retrieved sources
+/why                    Explain reasoning
+
+Policy Documents Used
+---------------------
+- DAFI 36-2903
+- AFCWI 36-3501
+- AFCW CD 2024
+- USAFA Dress & Appearance Standards
+- EXORD 25-003
+- CS-34 Discipline & Reward MFR
+- Hawg Spins
+
+Notes
+-----
+- The system answers only using ingested policy text.
+- Document uploads must be .txt or .md.
+- OCR quality depends on installed Tesseract/Poppler.
